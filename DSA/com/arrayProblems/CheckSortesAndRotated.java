@@ -1,5 +1,5 @@
 package com.arrayProblems;
-
+//TC -> O(N)  SC -> O(1)
 public class CheckSortesAndRotated {
     public boolean check(int[] nums) {
         int n = nums.length;

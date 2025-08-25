@@ -1,7 +1,7 @@
 package com.arrayProblems;
 
 import java.util.ArrayList;
-
+//TC -> O(N)  SC -> O(1)
 public class CheckSorted {
 
     public boolean isSorted(ArrayList<Integer> nums) {
