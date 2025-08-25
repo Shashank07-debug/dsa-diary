@@ -23,11 +23,11 @@ public class CheckSortesAndRotated {
         int[] arr4 = {5, 1, 2, 3, 4};
         int[] arr5 = {1, 3, 2, 4, 5};
 
-        System.out.println("Test case 1: " + sol.check(arr1)); // true
-        System.out.println("Test case 2: " + sol.check(arr2)); // true
-        System.out.println("Test case 3: " + sol.check(arr3)); // false
-        System.out.println("Test case 4: " + sol.check(arr4)); // true
-        System.out.println("Test case 5: " + sol.check(arr5)); // false
+        System.out.println("Test case 1: " + sol.check(arr1));
+        System.out.println("Test case 2: " + sol.check(arr2));
+        System.out.println("Test case 3: " + sol.check(arr3));
+        System.out.println("Test case 4: " + sol.check(arr4));
+        System.out.println("Test case 5: " + sol.check(arr5));
     }
 }
 
