@@ -17,6 +17,11 @@ public class RotateArrayByDPlaces {
         }
     }
     //Optimal Approach
+
+    // For Right rotation
+    // reverse whole array
+    // reverse first k elements
+    // reverse k to last element
     public void rotateArrayOptimal(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
