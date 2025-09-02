@@ -1,5 +1,7 @@
 package com.arrayProblems;
 
+import java.util.Arrays;
+
 public class SubarraySum {
     //Brute Force Solution TC - > O(N ^ 3) SC - > O(1)
     public static int maxSubArray(int[] nums) {
@@ -43,9 +45,35 @@ public class SubarraySum {
         }
         return max;
     }
+    //Optimal Solution which return index of subarray
+    public static int[] maxSubArray4(int[] nums) {
+        int max = nums[0];
+        int sum = 0;
+        int start = 0;
+        int subStart = 0;
+        int subEnd = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if(sum == 0) start = i;
+            sum += nums[i];
+            if(sum > max){
+                max = sum;
+                subStart = start;
+                subEnd = i;
+            }
+            if (sum < 0) {
+                sum = 0;
+            }
+        }
+        return new int[]{subStart, subEnd};
+    }
+
+
+
 
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println("Maximum subarray sum is: " + maxSubArray2(nums));
+        int[] res = maxSubArray4(nums);
+        System.out.println(Arrays.toString(res));
     }
 }
