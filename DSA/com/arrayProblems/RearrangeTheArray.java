@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RearrangeTheArray {
-    //Brute Force Solution TC -> O(2N) SC -> O(N)
+    //Brute Force Solution TC -> O(N + N / 2) SC -> O(N)
     public int[] rearrangeArray(int[] nums){
         int[] pos = new int[nums.length / 2];
         int[] neg = new int[nums.length / 2];
@@ -44,7 +44,7 @@ public class RearrangeTheArray {
     }
 
     //Another version which is having uneven numbers of positive elements and negative elements
-    //TC - > O() SC -> O(N)
+    //TC - > O(2N) SC -> O(N)
 
     public int[] rearrangeArray2(int[] nums){
         ArrayList<Integer> pos = new ArrayList<>();
