@@ -55,6 +55,7 @@ public class MajorityElement {
         return -1;
     }
 
+
     public static void main(String[] args) {
         int[] nums = {3, 3, 4, 2, 3, 3, 3};
 
