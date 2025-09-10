@@ -17,7 +17,7 @@ public class CountInversions {
         System.out.println("Sorted Array: " + Arrays.toString(nums));
         System.out.println("Number of Inversions: " + inversions);
     }
-
+    //Optimal Solution TC -> O(NLogN) SC -> O(N)
     public static int ms(int[]nums, int low, int high){
         int cnt = 0;
         if(low >= high) return cnt;
