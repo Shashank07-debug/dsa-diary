@@ -18,7 +18,7 @@ public class ReversePairs {
         System.out.println("Number of Inversions: " + countPairs);
     }
 
-    //TC -> O(NLogN) SC -> O(N)
+    //Optimal Solution TC -> O(NLogN) SC -> O(N)
     public static int ms(int[]nums, int low, int high){
         int cnt = 0;
         if(low >= high) return cnt;
