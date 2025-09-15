@@ -2,6 +2,7 @@ package com.BinarySearch;
 
 public class MinInRotatedSortedArray {
     public int findMin(int[] nums) {
+        //TC -> O(LogN) SC -> O(1)
         int low = 0;
         int high = nums.length - 1;
         int ans = Integer.MAX_VALUE;
