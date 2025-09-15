@@ -20,8 +20,8 @@ public class FirstAndLastOccurence {
     //TC -> O(LogN) SC -< O(1)
     public int[] searchRange1(int[] nums, int target) {
         int n = nums.length;
-        int first = firstOccurence(nums, target, n);
-        int last = lastOccurence(nums, target, n);
+        int first = firstOccurence1(nums, target, n);
+        int last = lastOccurence1(nums, target, n);
         return new int[]{first, last};
     }
 
@@ -55,6 +55,43 @@ public class FirstAndLastOccurence {
             }
         }
         return ans;
+    }
+
+    //Pure Binary Search implementation TC -> O(LogN) SC -< O(1)
+    private int firstOccurence1(int[] nums, int target, int n){
+        int low = 0;
+        int high = n - 1;
+        int first = -1;
+        while(low <= high){
+            int mid = (low + high) / 2;
+            if(nums[mid] == target){
+                first = mid;
+                high = mid - 1;
+            }else if(nums[mid] < target){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return first;
+    }
+
+    private int lastOccurence1(int[] nums, int target, int n){
+        int low = 0;
+        int high = n - 1;
+        int first = -1;
+        while(low <= high){
+            int mid = (low + high) / 2;
+            if(nums[mid] == target){
+                first = mid;
+                low = mid + 1;
+            }else if(nums[mid] < target){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        return first;
     }
 
 
