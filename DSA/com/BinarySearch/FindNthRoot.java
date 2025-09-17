@@ -3,6 +3,18 @@ package com.BinarySearch;
 import java.util.Scanner;
 
 public class FindNthRoot {
+    //Brute Force TC -> O(N * logN) SC -> O(1)
+    public int NthRoot1(int N, int M){
+        long ans = 1;
+        for(int i = 1; i <= M; i++){
+            ans = (long)Math.pow(i, N);
+            if(ans == M){
+                return i;
+            }
+        }
+        return -1;
+    }
+    //TC -> O(logM * N) SC -> O(1)
     private int func(int mid, int M, int N) {
         long ans = 1;
         for (int i = 1; i <= N; i++) {
@@ -43,8 +55,8 @@ public class FindNthRoot {
 
         // Example test cases
         System.out.println("\nSample Runs:");
-        System.out.println("NthRoot(3, 27) = " + solver.NthRoot(3, 27)); // 3
-        System.out.println("NthRoot(2, 16) = " + solver.NthRoot(2, 16)); // 4
+        System.out.println("NthRoot(3, 27) = " + solver.NthRoot1(3, 27)); // 3
+        System.out.println("NthRoot(2, 16) = " + solver.NthRoot1(2, 16)); // 4
         System.out.println("NthRoot(2, 8)  = " + solver.NthRoot(2, 8));  // -1
         System.out.println("NthRoot(5, 243)= " + solver.NthRoot(5, 243)); // 3
         System.out.println("NthRoot(4, 15) = " + solver.NthRoot(4, 15)); // -1
