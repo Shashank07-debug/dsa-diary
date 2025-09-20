@@ -3,7 +3,7 @@ package com.BinarySearch;
 import java.util.Arrays;
 
 public class minNoOfBouquets {
-    // TC -> O(max - min + 1 * N) SC -> O(1)
+    //Brute Force TC -> O(max - min + 1 * N) SC -> O(1)
     private static boolean possible(int[] arr, int day, int m, int k){
         int n = arr.length;
         int cnt = 0;
@@ -33,6 +33,24 @@ public class minNoOfBouquets {
             }
         }
         return -1;
+    }
+    //Optimized Solution TC -> O(N * log(max - min)) SC -> O(1)
+    public int minDays1(int[] bloomDay, int m, int k) {
+        long val = (long)(m * k);
+        if(val > (long)bloomDay.length)return -1;
+        int low = Arrays.stream(bloomDay).min().getAsInt();
+        int high = Arrays.stream(bloomDay).max().getAsInt();
+        int ans = -1;
+        while(low <= high){
+            int mid = (low + high) / 2;
+            if(possible(bloomDay, mid, m, k) == true){
+                ans = mid;
+                high = mid - 1;
+            }else{
+                low = mid + 1;
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
