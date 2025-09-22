@@ -43,7 +43,7 @@ public class FindMinimumDivisor {
         }
         return (sum <= threshold);
     }
-
+    // main method
     public static void main(String[] args) {
         FindMinimumDivisor solver = new FindMinimumDivisor();
         int[] nums = {1, 2, 5, 9};
